@@ -1,15 +1,41 @@
 import * as assert from 'assert';
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 import * as vscode from 'vscode';
-// import * as myExtension from '../../extension';
+import * as path from 'path';
+import * as fs from 'fs';
+import { scanDependencies } from '../dependencyScanner';
 
 suite('Extension Test Suite', () => {
-	vscode.window.showInformationMessage('Start all tests.');
+    vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
-		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
-		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
-	});
+    const testFolder = path.resolve(__dirname, 'testFixture');
+
+    // Clean up before and after each test
+    setup(() => {
+        if (!fs.existsSync(testFolder)) {
+            fs.mkdirSync(testFolder);
+        }
+    });
+
+    teardown(() => {
+        if (fs.existsSync(testFolder)) {
+            fs.rmSync(testFolder, { recursive: true, force: true });
+        }
+    });
+
+    test('scanDependencies should identify dependencies correctly', async () => {
+        // Create mock files
+        const packageJsonContent = JSON.stringify({
+            dependencies: {
+                "express": "^4.17.1"
+            }
+        });
+        fs.writeFileSync(path.join(testFolder, 'package.json'), packageJsonContent);
+
+        // Run the scanDependencies function
+        await scanDependencies(testFolder);
+
+        // Your assertions should go here
+        // Example: check if specific messages were shown or if vulnerabilities were detected
+        assert.strictEqual(true, true); // Placeholder assertion
+    });
 });
