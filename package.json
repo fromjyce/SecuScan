@@ -29,7 +29,7 @@
     "compile-tests": "tsc -p . --outDir out/test",
     "watch-tests": "tsc -p . -w --outDir out/test",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "lint": "eslint src/**/*.ts src/test/**/*.ts",
     "test": "vscode-test",
     "test:run": "npm run compile-tests && npm run compile && node out/test/runTests.js"
   },
