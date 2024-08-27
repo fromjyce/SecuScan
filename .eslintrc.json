@@ -2,7 +2,7 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
@@ -20,7 +20,10 @@
         "curly": "warn",
         "eqeqeq": "warn",
         "no-throw-literal": "warn",
-        "semi": "off"
+        "semi": "off",
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"]
     },
     "ignorePatterns": [
         "out",
