@@ -26,7 +26,7 @@ suite('Extension Test Suite', () => {
         // Create mock files
         const packageJsonContent = JSON.stringify({
             dependencies: {
-                "express": "^4.17.1"
+                'express': '^4.17.1'
             }
         });
         fs.writeFileSync(path.join(testFolder, 'package.json'), packageJsonContent);
