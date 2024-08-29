@@ -30,7 +30,7 @@
     "watch-tests": "tsc -p . -w --outDir out/test",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "vscode-test",
+    "test": "npm run test:run",
     "test:run": "npm run compile-tests && npm run compile && node out/test/runTests.js"
   },
   "devDependencies": {
