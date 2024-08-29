@@ -21,16 +21,13 @@
       }
     ]
   },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack --mode production --config \"webpack.config.js\"",
+"scripts": {
+    "compile": "webpack --mode production --config webpack.config.js",
+    "compile-tests": "tsc -p tsconfig.test.json",
     "watch": "webpack --mode development --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out/test",
-    "watch-tests": "tsc -p . -w --outDir out/test",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "npm run test:run",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "test": "node out/test/runTests.js",
     "test:run": "npm run compile-tests && npm run compile && node out/test/runTests.js"
   },
   "devDependencies": {
