@@ -2,8 +2,8 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
       "outDir": "./out/test",
-      "rootDir": "./src/test",
-      "declaration": false  // No need for declaration files for test files
+      "rootDir": "./src",  // Changed rootDir to allow importing from `src`
+      "declaration": false // No need for declaration files for test files
     },
     "include": ["src/test/**/*.ts"],
     "exclude": ["node_modules"]
