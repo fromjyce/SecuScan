@@ -1,7 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
-//@ts-check
+// @ts-check
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
 
 /** @type WebpackConfig */
@@ -34,7 +34,9 @@ const extensionConfig = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(), // Clean the output directory before each build
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['**/*', '!test/**/*'] // Exclude 'test' directory from cleaning
+        }),
         // No need to copy package.json
     ],
     devtool: 'nosources-source-map', // Generate source maps without revealing source code
