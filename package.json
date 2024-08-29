@@ -30,7 +30,7 @@
     "watch-tests": "tsc -p tsconfig.test.json -w --outDir out/test",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "node out/test/runTests.js",
+    "test": "mocha --require ts-node/register --recursive out/test/**/*.js",
     "test:run": "npm run compile-tests && node out/test/runTests.js"
   },
   "devDependencies": {
