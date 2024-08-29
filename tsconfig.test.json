@@ -1,7 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "outDir": "./out/test",  // Output directory for compiled test files
+        "outDir": "./out",  // Output directory for compiled test files
         "rootDir": "./src",      // Root directory for source files including tests
         "declaration": false     // No need for declaration files for tests
     },
