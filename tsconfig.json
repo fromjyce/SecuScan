@@ -1,21 +1,20 @@
 {
 	"compilerOptions": {
-	  "module": "Node16",          // Module system used
-	  "target": "ES2022",          // JavaScript version
-	  "lib": ["ES2022"],           // Library files to include
-	  "sourceMap": true,           // Generate source maps for debugging
-	  "outDir": "./out",           // Output directory for compiled files
-	  "rootDir": "./src",          // Root directory of your source files
-	  "strict": true,              // Enable all strict type-checking options
-	  "esModuleInterop": true,     // Enables compatibility with CommonJS modules
-	  "declaration": true          // Generate declaration files (.d.ts)
+	  "module": "Node16",
+	  "target": "ES2022",
+	  "lib": ["ES2022"],
+	  "sourceMap": true,
+	  "outDir": "./out",
+	  "rootDir": "./src",
+	  "strict": true,
+	  "esModuleInterop": true,
+	  "declaration": true
 	},
 	"include": [
-	  "src/**/*.ts",   // Include all TypeScript files in src folder
-	  "test/**/*.ts"   // Include all TypeScript files in test folder
+	  "src/**/*.ts"   // Include all TypeScript files in the src folder
 	],
 	"exclude": [
-	  "node_modules"   // Exclude node_modules folder
+	  "node_modules"  // Exclude node_modules folder
 	]
   }
   
