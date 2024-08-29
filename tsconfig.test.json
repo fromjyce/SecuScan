@@ -1,15 +1,14 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-      "outDir": "./out",         // Output directory for compiled files
-      "rootDir": "./src",        // Root directory for source files
-      "declaration": false       // No need for declaration files for tests
+        "outDir": "./out/test",  // Output directory for compiled test files
+        "rootDir": "./src/test", // Root directory for test source files
+        "declaration": false     // No need for declaration files for tests
     },
     "include": [
-      "src/**/*.ts"              // Include all TypeScript files in the src directory
+        "src/test/**/*.ts"      // Include all TypeScript files in the src/test directory
     ],
     "exclude": [
-      "node_modules"             // Exclude node_modules
+        "node_modules"          // Exclude node_modules
     ]
-  }
-  
+}
