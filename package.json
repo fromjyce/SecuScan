@@ -31,7 +31,7 @@
   "pretest": "npm run compile-tests && npm run compile && npm run lint",
   "lint": "eslint src/**/*.ts src/test/**/*.ts",
   "test": "node out/test/runTests.js",
-  "test:run": "npm run compile-tests && npm run compile && node out/test/runTests.js"
+  "test:run": "npm run compile-tests && node out/test/runTests.js"
 },
   "devDependencies": {
     "@types/chai": "^4.3.19",
