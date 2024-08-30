@@ -2,9 +2,8 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
       "outDir": "./out/test",
-      "rootDir": "./src",
-      "declaration": false,
-      "esModuleInterop": true
+      "rootDir": "./src/test", // Set rootDir to src/test
+      "declaration": false
     },
     "include": [
       "src/test/**/*.ts"
