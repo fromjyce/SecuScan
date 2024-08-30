@@ -1,24 +1,20 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
-// @ts-check
-/** @typedef {import('webpack').Configuration} WebpackConfig **/
-
-/** @type WebpackConfig */
-const extensionConfig = {
-    target: 'node', // VS Code extensions run in a Node.js context 📖 -> https://webpack.js.org/configuration/node/
-    mode: 'production', // Set to 'production' for optimized builds
-    entry: './src/extension.ts', // Entry point of the extension 📖 -> https://webpack.js.org/configuration/entry-context/
+module.exports = {
+    target: 'node',
+    mode: 'production',
+    entry: './src/extension.ts',
     output: {
-        path: path.resolve(__dirname, 'out'),
+        path: path.resolve(__dirname, 'out/extension'),
         filename: 'extension.js',
         libraryTarget: 'commonjs2'
     },
     externals: {
-        vscode: 'commonjs vscode' // Exclude VS Code module from the bundle
+        vscode: 'commonjs vscode'
     },
     resolve: {
-        extensions: ['.ts', '.js'] // Resolve TypeScript and JavaScript files
+        extensions: ['.ts', '.js']
     },
     module: {
         rules: [
@@ -37,12 +33,9 @@ const extensionConfig = {
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: ['**/*', '!test/**/*'] // Exclude 'test' directory from cleaning
         }),
-        // No need to copy package.json
     ],
-    devtool: 'nosources-source-map', // Generate source maps without revealing source code
+    devtool: 'nosources-source-map',
     infrastructureLogging: {
-        level: 'log', // Enable logging required for problem matchers
+        level: 'log',
     },
 };
-
-module.exports = [extensionConfig];
