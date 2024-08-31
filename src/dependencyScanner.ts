@@ -94,9 +94,7 @@ async function checkVulnerabilities(dependencies: string[]) {
         const [packageName] = dep.split('@');
         try {
             const response = await axios.get(`${vulnerabilityDatabaseUrl}?keywordSearch=${packageName}&apiKey=${apiKey}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                }
+                headers: { 'Content-Type': 'application/json' }
             });
 
             if (response.data.vulnerabilities && response.data.vulnerabilities.length > 0) {
@@ -106,11 +104,7 @@ async function checkVulnerabilities(dependencies: string[]) {
                 vscode.window.showInformationMessage(`No vulnerabilities found for ${dep}`);
             }
         } catch (error) {
-            if (error instanceof Error) {
-                vscode.window.showErrorMessage(`Error checking vulnerabilities for ${dep}: ${error.message}`);
-            } else {
-                vscode.window.showErrorMessage(`An unknown error occurred while checking vulnerabilities for ${dep}`);
-            }
+            vscode.window.showErrorMessage(`Error checking vulnerabilities for ${dep}: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }        
     }
 }
