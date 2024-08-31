@@ -22,7 +22,7 @@
         "no-throw-literal": "warn",
         "semi": "off",
         "indent": ["error", 4],
-        "linebreak-style": ["error", "unix", "windows"],
+        "linebreak-style": ["error", "unix"],
         "quotes": ["error", "single"]
     },
     "ignorePatterns": [
