@@ -2,6 +2,7 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
+import { suite, test } from 'mocha';
 
 const testFixturePath = path.resolve(__dirname, 'testFixtures');
 
