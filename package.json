@@ -30,7 +30,8 @@
     "watch-tests": "tsc -p tsconfig.test.json -w --outDir out/test",
     "pretest": "npm run compile && npm run compile-tests && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "npx mocha --require ts-node/register --recursive out/test/**/*.js",
+     "test": "npx mocha --require ts-node/register --recursive out/test/**/*.js",
+  "vscode-test": "node ./node_modules/vscode/bin/test",
     "test:run": "npm run compile-tests && node out/test/runTests.js"
   },
   "devDependencies": {
