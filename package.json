@@ -27,7 +27,7 @@
     "watch-tests": "tsc -p tsconfig.test.json -w --outDir out/test",
     "pretest": "npm run compile && npm run compile-tests && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "npm run compile-tests && node ./out/test/runTests.js",
+    "test": "ts-node src/test/runTests.ts",
     "vscode-test": "node ./node_modules/vscode/bin/test --version 1.60.0",
     "test:run": "npm run compile-tests && node out/test/runTests.js"
   },
