@@ -8,13 +8,16 @@
 	  "rootDir": "./src",
 	  "strict": true,
 	  "esModuleInterop": true,
-	  "declaration": true
+	  "declaration": true,
+	  "types": ["node", "mocha", "vscode"],
+	  "typeRoots": ["./node_modules/@types"]
 	},
 	"include": [
-	  "src/**/*.ts"   // Include all TypeScript files in the src folder
+	  "src/**/*.ts"  ,
+	  "src/test/**/*.ts"
 	],
 	"exclude": [
-	  "node_modules"  // Exclude node_modules folder
+	  "node_modules"
 	]
   }
   
