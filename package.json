@@ -3,6 +3,7 @@
   "displayName": "SecuScan",
   "description": "A VS Code extension to scan for security vulnerabilities in project dependencies.",
   "version": "0.0.1",
+  "icon": "src/assests/icon.png",
   "engines": {
     "vscode": "^1.92.0"
   },
