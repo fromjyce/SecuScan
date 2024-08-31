@@ -22,20 +22,24 @@
     "vscode:prepublish": "npm run package",
     "compile": "webpack --mode production --config webpack.config.js",
     "watch": "webpack --mode development --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p tsconfig.test.json",
+    "watch-tests": "tsc -p tsconfig.test.json -w --outDir out/test",
+    "pretest": "npm run compile && npm run compile-tests && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
-    "test": "npx mocha --require ts-node/register --recursive out/test/**/*.js",
-    "package": "webpack --mode production --devtool hidden-source-map"
+    "test": "npm run compile-tests && node ./out/test/runTests.js",
+    "vscode-test": "node ./node_modules/vscode/bin/test --version 1.60.0",
+    "test:run": "npm run compile-tests && node out/test/runTests.js"
   },
   "devDependencies": {
     "@types/chai": "^4.3.19",
     "@types/glob": "^7.1.2",
     "@types/mocha": "^10.0.7",
-    "@types/node": "20.x",
-    "@types/vscode": "^1.92.0",
+    "@types/node": "^20.16.2",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.11.0",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0",
+    "@vscode/test-electron": "^2.4.1",
     "chai": "^5.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
@@ -45,12 +49,11 @@
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "vscode": "^1.1.37",
-    "vscode-test": "^1.6.1",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@types/vscode": "^1.92.0",
     "axios": "^1.7.5"
   }
 }
