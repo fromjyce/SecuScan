@@ -8,7 +8,9 @@
     "vscode": "^1.92.0"
   },
   "categories": [
-    "Other"
+    "Linters",
+    "Testing",
+    "Debuggers"
   ],
   "activationEvents": [
     "onCommand:secuscan.checkDependencies"
