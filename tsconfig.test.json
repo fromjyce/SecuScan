@@ -1,17 +1,14 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-      "target": "ES6",
-      "module": "commonjs",
-      "lib": ["ES6"],
-      "sourceMap": true,
-      "declaration": true,
-      "outDir": "./out",
-      "rootDir": "./src",
-      "types": ["vscode"],
-      "strict": true
-    },
-    "include": ["src/test/**/*.ts"],
-    "exclude": ["node_modules", "**/*.test.ts"]
-  }
-  
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./out/test",
+    "rootDir": "./src/test",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node", "mocha", "vscode"]
+  },
+  "include": ["src/test/**/*.ts"],
+  "exclude": ["node_modules"]
+}
