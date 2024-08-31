@@ -1,18 +1,16 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    target: 'node',
-    mode: 'production',
-    entry: './src/extension.ts',
+    entry: './src/extension.ts',  
     output: {
-        path: path.resolve(__dirname, 'out/test'),
-        filename: 'extension.test.js',
-        libraryTarget: 'commonjs2'
+        filename: 'extension.js',  
+        path: path.resolve(__dirname, 'out'),  
+        libraryTarget: 'commonjs2',  // Module format
+        devtoolModuleFilenameTemplate: '../[resource-path]' 
     },
-    externals: {
-        vscode: 'commonjs vscode'
-    },
+    devtool: 'source-map',
+    target: 'node',
     resolve: {
         extensions: ['.ts', '.js']
     },
@@ -21,21 +19,14 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    }
-                ]
+                use: 'ts-loader'
             }
         ]
     },
-    plugins: [
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ['**/*', '!test/**/*'] // Exclude 'test' directory from cleaning
-        }),
-    ],
-    devtool: 'nosources-source-map',
-    infrastructureLogging: {
-        level: 'log',
+    externals: {
+        vscode: 'commonjs vscode'
     },
+    plugins: [
+        new CleanWebpackPlugin()
+    ]
 };
