@@ -12,3 +12,4 @@ vsc-extension-quickstart.md
 **/*.ts
 **/.vscode-test.*
 !out/extension.js
+!src/assests/icon.png
