@@ -31,7 +31,7 @@
     "pretest": "npm run compile && npm run compile-tests && npm run lint",
     "lint": "eslint src/**/*.ts src/test/**/*.ts",
      "test": "npx mocha --require ts-node/register --recursive out/test/**/*.js",
-  "vscode-test": "node ./node_modules/vscode/bin/test",
+ "vscode-test": "node ./node_modules/vscode/bin/test --version 1.60.0",
     "test:run": "npm run compile-tests && node out/test/runTests.js"
   },
   "devDependencies": {
