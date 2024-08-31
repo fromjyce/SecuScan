@@ -3,8 +3,8 @@ import * as path from 'path';
 import axios from 'axios';
 import * as vscode from 'vscode';
 
-const vulnerabilityDatabaseUrl = 'https://services.nvd.nist.gov/rest/json/cves/2.0'; // Updated to 2.0 NVD API URL
-const apiKey = '44fb5eb1-da14-4e10-9a94-6fa742f58b42'; // Your API Key
+const vulnerabilityDatabaseUrl = 'https://services.nvd.nist.gov/rest/json/cves/2.0';
+const apiKey = '44fb5eb1-da14-4e10-9a94-6fa742f58b42';
 
 export async function scanDependencies(folder: string) {
     const files = ['package.json', 'requirements.txt', 'Pipfile', 'Gemfile', 'composer.json', 'pom.xml', 'build.gradle', 'Cargo.toml', 'go.mod'];
