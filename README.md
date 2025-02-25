@@ -34,7 +34,7 @@ To install the SecuScan extension, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/secuscan.git
+   git clone https://github.com/fromjyce/secuscan.git
    cd secuscan
    ```
 
